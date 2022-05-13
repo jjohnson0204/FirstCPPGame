@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FirstCPPGame.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BC464358-E37A-4F6F-A2B4-A26B0E8B276F}</UniqueIdentifier>
+      <UniqueIdentifier>{FD71D804-C487-4B9C-A7D9-BB149D1A8E9B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FirstCPPGame.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\FirstCPPGameEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{E3A41033-0F32-4AE8-A123-6FDD87404BBF}</UniqueIdentifier>
+      <UniqueIdentifier>{48850B12-666C-43C3-BFE7-C104EE7134BE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\FirstCPPGame">
-      <UniqueIdentifier>{7CCF70EA-A522-44B8-8BA8-EB4ED1E7B6C0}</UniqueIdentifier>
+      <UniqueIdentifier>{64109E29-E8EC-4BAB-A827-7D206FED2452}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FirstCPPGame\FirstCPPGame.Build.cs">
       <Filter>Source\FirstCPPGame</Filter>

@@ -2,7 +2,6 @@
 #include "Engine.h"
 #include "CoreMinimal.h"
 #include "FirstCPPGameCharacter.h"
-#include "FirstCPPGameCharacter.generated.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -47,6 +46,7 @@ AFirstCPPGameCharacter::AFirstCPPGameCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+	Power = 100.0f;
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
@@ -54,6 +54,8 @@ AFirstCPPGameCharacter::AFirstCPPGameCharacter()
 void AFirstCPPGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFirstCPPGameCharacter::OnBeginOverlap);
 }
 
 
@@ -93,25 +95,25 @@ void AFirstCPPGameCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFirstCPPGameCharacter::OnResetVR);
 }
-FHitResult AFirstCPPGameCharacter::instantShot()
-{
-	FVector rayLocation;
-	FRotator rayRotation;
-	FVector endTrace = FVector::ZeroVector;
-
-	AFirstCPPGameCharacter* const PlayerController = GetWorld()->GetFirstPlayerController();
-	if(PlayerController)
-	{
-		PlayerController->GetPlayerViewPoint(rayLocation, rayRotation);
-		endTrace = rayLocation + (rayRotation.Vector() * weaponRange);
-
-	}
-	FCollisionQueryParams traceParams(SCENE_QUERY_STAT(instantShot), true, GetInstigator());
-	FHitResult hit(ForceInit);
-	GetWorld()->LineTraceSingleByChannel(hit, rayLocation, endTrace, ECC_Visibility, traceParams);
-
-	return FHitResult();
-}
+//FHitResult AFirstCPPGameCharacter::instantShot()
+//{
+//	FVector rayLocation;
+//	FRotator rayRotation;
+//	FVector endTrace = FVector::ZeroVector;
+//
+//	AFirstCPPGameCharacter* const PlayerController = GetWorld()->GetFirstPlayerController();
+//	if(PlayerController)
+//	{
+//		PlayerController->GetPlayerViewPoint(rayLocation, rayRotation);
+//		endTrace = rayLocation + (rayRotation.Vector() * weaponRange);
+//
+//	}
+//	FCollisionQueryParams traceParams(SCENE_QUERY_STAT(instantShot), true, GetInstigator());
+//	FHitResult hit(ForceInit);
+//	GetWorld()->LineTraceSingleByChannel(hit, rayLocation, endTrace, ECC_Visibility, traceParams);
+//
+//	return FHitResult();
+//}
 
 void AFirstCPPGameCharacter::OnResetVR()
 {
@@ -123,6 +125,8 @@ void AFirstCPPGameCharacter::OnResetVR()
 	//		Comment or delete the call to ResetOrientationAndPosition below (appropriate if not supporting VR)
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
+
+
 
 void AFirstCPPGameCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
@@ -172,5 +176,21 @@ void AFirstCPPGameCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
+	}
+}
+void AFirstCPPGameCharacter::OnBeginOverlap(UPrimitiveComponent* HitComp,
+	AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+	bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor->ActorHasTag("Recharge")) {
+
+		Power += 10.0f;
+
+		if (Power > 100.0f)
+			Power = 100.0f;
+
+		OtherActor->Destroy();
+
+		UE_LOG(LogTemp, Warning, TEXT("Collided with"));
 	}
 }

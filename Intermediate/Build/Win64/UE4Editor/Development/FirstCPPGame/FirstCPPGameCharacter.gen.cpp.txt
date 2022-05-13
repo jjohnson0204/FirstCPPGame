@@ -675,4 +675,13 @@ D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
 D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\isa_availability.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Slate\Public\Widgets/Input/SSlider.h
 D:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Slate\Public\Framework/Docking/LayoutService.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor/UnrealEd/Public/Kismet2/BlueprintEditorUtils.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor\BlueprintGraph\Classes\K2Node_EditablePinBase.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor\BlueprintGraph\Classes\K2Node.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor\BlueprintGraph\Public\BlueprintNodeSignature.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\BlueprintGraph\K2Node.generated.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\BlueprintGraph\K2Node_EditablePinBase.generated.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor/ClassViewer/Public/ClassViewerModule.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Source\Editor\BlueprintGraph\Classes\EdGraphSchema_K2.h
+D:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\BlueprintGraph\EdGraphSchema_K2.generated.h
 D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Inc\FirstCPPGame\FirstCPPGameCharacter.generated.h

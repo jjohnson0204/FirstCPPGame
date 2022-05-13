@@ -1,13 +1,13 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-
+#pragma once
 
 #include "Engine.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/Actor.h"
+#include <Editor/UnrealEd/Public/Kismet2/BlueprintEditorUtils.h>
 #include "FirstCPPGameCharacter.generated.h"
-#pragma once
 
 UCLASS(config=Game)
 class AFirstCPPGameCharacter : public ACharacter
@@ -29,9 +29,20 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Weapon")
 		float weaponRange;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		float Power;
+
+	UPROPERTY(EditAnywhere)
+		float Power_Treshold;
+
+	UFUNCTION()
+		void OnBeginOverlap(class UPrimitiveComponent* HitComp,
+			class AActor* OtherActor, class UPrimitiveComponent* OtherComp,
+			int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
-	float BaseTurnRate;
+		float BaseTurnRate;
 
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
@@ -73,7 +84,15 @@ protected:
 	
 
 public:
-	void Tick(float DeltaTime) override;
+	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditAnywhere)
+		float Damage;
+
+	UPROPERTY(EditAnywhere)
+		UBoxComponent* DamageBox;
+
+
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/

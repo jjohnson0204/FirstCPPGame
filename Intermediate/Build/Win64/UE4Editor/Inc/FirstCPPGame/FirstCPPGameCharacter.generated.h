@@ -8,14 +8,25 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef FIRSTCPPGAME_FirstCPPGameCharacter_generated_h
 #error "FirstCPPGameCharacter.generated.h already included, missing '#pragma once' in FirstCPPGameCharacter.h"
 #endif
 #define FIRSTCPPGAME_FirstCPPGameCharacter_generated_h
 
 #define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_SPARSE_DATA
-#define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_RPC_WRAPPERS
-#define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
+#define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap);
+
+
 #define FirstCPPGame_Source_FirstCPPGame_FirstCPPGameCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFirstCPPGameCharacter(); \
