@@ -24,7 +24,7 @@ public:
 	AFirstCPPGameCharacter();
 
 	UPROPERTY(EditAnywhere, Category = "Weapon")
-		float weaponRange(1000);
+		float weaponRange(1000f);
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
