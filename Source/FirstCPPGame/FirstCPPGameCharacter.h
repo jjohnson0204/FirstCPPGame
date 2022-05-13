@@ -1,17 +1,20 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#pragma once
 
+
+#include "Engine.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "FirstCPPGameCharacter.generated.h"
-
-
+#pragma once
 
 UCLASS(config=Game)
 class AFirstCPPGameCharacter : public ACharacter
 {
 	GENERATED_BODY()
+
+
 
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -24,7 +27,7 @@ public:
 	AFirstCPPGameCharacter();
 
 	UPROPERTY(EditAnywhere, Category = "Weapon")
-		float weaponRange(1000f);
+		float weaponRange;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)

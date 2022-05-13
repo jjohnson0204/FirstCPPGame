@@ -53,5 +53,6 @@
     <ClInclude Include="..\..\Source\FirstCPPGame\FirstCPPGameGameMode.h">
       <Filter>Source\FirstCPPGame</Filter>
     </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
-
+#include "Engine.h"
+#include "CoreMinimal.h"
 #include "FirstCPPGameCharacter.h"
+#include "FirstCPPGameCharacter.generated.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -8,9 +10,6 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "GameFramework/Actor.h"
-#include "CoreMinimal.h"
-#include "GameFramework/Character.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
 
@@ -100,14 +99,16 @@ FHitResult AFirstCPPGameCharacter::instantShot()
 	FRotator rayRotation;
 	FVector endTrace = FVector::ZeroVector;
 
-	AFirstCPPGameCharacter* const playerController = GetWorld()->GetFirstPlayerController();
-	if(playerController)
+	AFirstCPPGameCharacter* const PlayerController = GetWorld()->GetFirstPlayerController();
+	if(PlayerController)
 	{
-		playerController->GetPlayerViewPoint(rayLocation, rayRotation);
-		endTrace = rayLocation + (rayRotation.Vector() * 1000);
+		PlayerController->GetPlayerViewPoint(rayLocation, rayRotation);
+		endTrace = rayLocation + (rayRotation.Vector() * weaponRange);
 
 	}
 	FCollisionQueryParams traceParams(SCENE_QUERY_STAT(instantShot), true, GetInstigator());
+	FHitResult hit(ForceInit);
+	GetWorld()->LineTraceSingleByChannel(hit, rayLocation, endTrace, ECC_Visibility, traceParams);
 
 	return FHitResult();
 }

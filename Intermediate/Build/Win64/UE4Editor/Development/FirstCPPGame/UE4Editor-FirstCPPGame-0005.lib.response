@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-FirstCPPGame-0005.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\FirstCPPGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGame.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGameCharacter.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGameGameMode.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGame.init.gen.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGameCharacter.gen.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\FirstCPPGameGameMode.gen.cpp.obj"
+"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\Default.rc2.res"
+/OUT:"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\UE4Editor-FirstCPPGame-0005.lib"
