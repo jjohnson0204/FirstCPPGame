@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\FirstCPPGame.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{BC464358-E37A-4F6F-A2B4-A26B0E8B276F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FirstCPPGame.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FirstCPPGameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{E3A41033-0F32-4AE8-A123-6FDD87404BBF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\FirstCPPGame">
+      <UniqueIdentifier>{7CCF70EA-A522-44B8-8BA8-EB4ED1E7B6C0}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FirstCPPGame\FirstCPPGame.Build.cs">
+      <Filter>Source\FirstCPPGame</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\FirstCPPGame\FirstCPPGame.cpp">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstCPPGame\FirstCPPGame.h">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstCPPGame\FirstCPPGameCharacter.cpp">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstCPPGame\FirstCPPGameCharacter.h">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FirstCPPGame\FirstCPPGameGameMode.cpp">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FirstCPPGame\FirstCPPGameGameMode.h">
+      <Filter>Source\FirstCPPGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

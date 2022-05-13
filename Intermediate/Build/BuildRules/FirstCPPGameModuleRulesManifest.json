@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Projects\\FirstCPPGame\\Source\\FirstCPPGame\\FirstCPPGame.Build.cs",
+		"D:\\Projects\\FirstCPPGame\\Source\\FirstCPPGame.Target.cs",
+		"D:\\Projects\\FirstCPPGame\\Source\\FirstCPPGameEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}

@@ -1,0 +1,2 @@
+D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\Definitions.FirstCPPGame.h
+D:\Projects\FirstCPPGame\Source\FirstCPPGame\FirstCPPGame.h
