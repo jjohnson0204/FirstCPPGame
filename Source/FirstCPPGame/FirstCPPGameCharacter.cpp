@@ -11,6 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
+#include <Runtime/UMG/Public/Blueprint/UserWidget.h>
 
 //////////////////////////////////////////////////////////////////////////
 // AFirstCPPGameCharacter
@@ -56,6 +57,11 @@ void AFirstCPPGameCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFirstCPPGameCharacter::OnBeginOverlap);
+
+	if (Player_Power_Widget_Class != nullptr) {
+		Player_Power_Widget = CreateWidget(GetWorld(), Player_Power_Widget_Class);
+		Player_Power_Widget->AddToViewport();
+	}
 }
 
 
@@ -64,6 +70,8 @@ void AFirstCPPGameCharacter::BeginPlay()
 void AFirstCPPGameCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	Power -= DeltaTime * Power_Treshold;
 }
 
 
@@ -95,25 +103,6 @@ void AFirstCPPGameCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFirstCPPGameCharacter::OnResetVR);
 }
-//FHitResult AFirstCPPGameCharacter::instantShot()
-//{
-//	FVector rayLocation;
-//	FRotator rayRotation;
-//	FVector endTrace = FVector::ZeroVector;
-//
-//	AFirstCPPGameCharacter* const PlayerController = GetWorld()->GetFirstPlayerController();
-//	if(PlayerController)
-//	{
-//		PlayerController->GetPlayerViewPoint(rayLocation, rayRotation);
-//		endTrace = rayLocation + (rayRotation.Vector() * weaponRange);
-//
-//	}
-//	FCollisionQueryParams traceParams(SCENE_QUERY_STAT(instantShot), true, GetInstigator());
-//	FHitResult hit(ForceInit);
-//	GetWorld()->LineTraceSingleByChannel(hit, rayLocation, endTrace, ECC_Visibility, traceParams);
-//
-//	return FHitResult();
-//}
 
 void AFirstCPPGameCharacter::OnResetVR()
 {

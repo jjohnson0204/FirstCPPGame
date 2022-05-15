@@ -22,6 +22,8 @@ void EmptyLinkFunctionForGeneratedCodeFirstCPPGameCharacter() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AFirstCPPGameCharacter::execOnBeginOverlap)
@@ -158,6 +160,10 @@ void EmptyLinkFunctionForGeneratedCodeFirstCPPGameCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Power_Treshold;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Player_Power_Widget_Class_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_Player_Power_Widget_Class;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseTurnRate_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
@@ -235,6 +241,13 @@ void EmptyLinkFunctionForGeneratedCodeFirstCPPGameCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Power_Treshold = { "Power_Treshold", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstCPPGameCharacter, Power_Treshold), METADATA_PARAMS(Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Power_Treshold_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Power_Treshold_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Player_Power_Widget_Class_MetaData[] = {
+		{ "Category", "UI HUD" },
+		{ "ModuleRelativePath", "FirstCPPGameCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Player_Power_Widget_Class = { "Player_Power_Widget_Class", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstCPPGameCharacter, Player_Power_Widget_Class), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Player_Power_Widget_Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Player_Power_Widget_Class_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_BaseTurnRate_MetaData[] = {
 		{ "Category", "Camera" },
 		{ "Comment", "/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */" },
@@ -273,6 +286,7 @@ void EmptyLinkFunctionForGeneratedCodeFirstCPPGameCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_weaponRange,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Power,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Power_Treshold,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Player_Power_Widget_Class,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstCPPGameCharacter_Statics::NewProp_Damage,
@@ -305,7 +319,7 @@ void EmptyLinkFunctionForGeneratedCodeFirstCPPGameCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFirstCPPGameCharacter, 2041187721);
+	IMPLEMENT_CLASS(AFirstCPPGameCharacter, 4255104203);
 	template<> FIRSTCPPGAME_API UClass* StaticClass<AFirstCPPGameCharacter>()
 	{
 		return AFirstCPPGameCharacter::StaticClass();
