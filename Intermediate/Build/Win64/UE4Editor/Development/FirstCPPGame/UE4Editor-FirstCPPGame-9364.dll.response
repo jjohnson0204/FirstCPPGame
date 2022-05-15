@@ -71,7 +71,7 @@
 "setupapi.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"D:\Projects\FirstCPPGame\Binaries\Win64\UE4Editor-FirstCPPGame-0008.dll"
-/IMPLIB:"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\UE4Editor-FirstCPPGame-0008.suppressed.lib"
-/PDB:"D:\Projects\FirstCPPGame\Binaries\Win64\UE4Editor-FirstCPPGame-0008.pdb"
+/OUT:"D:\Projects\FirstCPPGame\Binaries\Win64\UE4Editor-FirstCPPGame-9364.dll"
+/IMPLIB:"D:\Projects\FirstCPPGame\Intermediate\Build\Win64\UE4Editor\Development\FirstCPPGame\UE4Editor-FirstCPPGame-9364.suppressed.lib"
+/PDB:"D:\Projects\FirstCPPGame\Binaries\Win64\UE4Editor-FirstCPPGame-9364.pdb"
 /ignore:4078

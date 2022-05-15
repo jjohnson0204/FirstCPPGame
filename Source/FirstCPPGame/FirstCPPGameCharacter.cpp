@@ -12,6 +12,9 @@
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
 #include <Runtime/UMG/Public/Blueprint/UserWidget.h>
+#include "Components/SkeletalMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
+
 
 //////////////////////////////////////////////////////////////////////////
 // AFirstCPPGameCharacter
@@ -72,6 +75,17 @@ void AFirstCPPGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	Power -= DeltaTime * Power_Treshold;
+
+	if (Power <= 0) {
+		if (!bDead) {
+			bDead = true;
+			GetMesh()->SetSimulatePhysics(true);
+
+			FTimerHandle UnusedHandle;
+			GetWorldTimerManager().SetTimer(
+				UnusedHandle, this, &AFirstCPPGameCharacter::RestartGame, 3.0f, false);
+		}
+	}
 }
 
 
@@ -166,6 +180,10 @@ void AFirstCPPGameCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+void AFirstCPPGameCharacter::RestartGame()
+{
+	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
 void AFirstCPPGameCharacter::OnBeginOverlap(UPrimitiveComponent* HitComp,
 	AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
