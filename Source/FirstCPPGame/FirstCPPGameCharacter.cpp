@@ -191,7 +191,7 @@ void AFirstCPPGameCharacter::OnBeginOverlap(UPrimitiveComponent* HitComp,
 {
 	if (OtherActor->ActorHasTag("Recharge")) {
 
-		Power += 10.0f;
+		Power += 20.0f;
 
 		if (Power > 100.0f)
 			Power = 100.0f;
